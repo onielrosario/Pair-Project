@@ -234,6 +234,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Magic" image="magic" id="bzR-yq-x0P"/>
                     <navigationItem key="navigationItem" id="QTP-Cp-yLm"/>
+                    <connections>
+                        <outlet property="MagicCollection" destination="pbc-xL-ntH" id="MCu-un-1Wm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3K-xq-lAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -351,6 +354,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="exm-Ra-Xvu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BYV-9X-arg">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

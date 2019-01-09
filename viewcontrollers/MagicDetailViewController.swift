@@ -9,7 +9,6 @@
 import UIKit
 
 class MagicDetailViewController: UIViewController {
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

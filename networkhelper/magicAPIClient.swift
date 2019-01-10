@@ -9,7 +9,7 @@
 import Foundation
 
 final class magicAPIClient {
-    static func getMagics(completionHandler: @escaping (AppError?, [Magic]?) -> Void) {
+    static func getMagics(completionHandler: @escaping (AppError?, [MagicCard]?) -> Void) {
         NetworkHelper.shared.performDataTask(endpointURLString: "https://api.magicthegathering.io/v1/cards?contains=imageUrl")
         { (appError, data, httpResponse) in
             if let appError = appError {
@@ -17,8 +17,24 @@ final class magicAPIClient {
             } else if let data = data {
                 do {
                     let cards = try JSONDecoder().decode(Magic.self, from: data)
-                    completionHandler(nil, [cards])
+                    completionHandler(nil, cards.cards)
                 } catch {
+                    completionHandler(AppError.decodingError(error), nil)
+                }
+            }
+        }
+    }
+    
+    static func getLanguages(completionHandler: @escaping(AppError?, [ForeignName]?) -> Void) {
+        NetworkHelper.shared.performDataTask(endpointURLString: "https://api.magicthegathering.io/v1/cards?contains=imageUrl") { (appError, data, response) in
+            if let appError = appError {
+              print(appError)
+            } else if let data = data {
+                do {
+                    let foreignNames = try JSONDecoder().decode(MagicCard.self, from: data)
+                    completionHandler(nil, foreignNames.foreignNames)
+                } catch {
+                    completionHandler(appError, nil)
                     completionHandler(AppError.decodingError(error), nil)
                 }
             }

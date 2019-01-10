@@ -10,7 +10,6 @@ import UIKit
 
 class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var pokemonDetailImage: UIImageView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }

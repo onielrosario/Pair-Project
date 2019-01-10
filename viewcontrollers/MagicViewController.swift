@@ -17,6 +17,7 @@ class MagicViewController: UIViewController {
             }
         }
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class MagicViewController: UIViewController {
             if let appError = appError {
                 print(appError)
             } else if let magicCards = magicCards {
-                self.magicCards = magicCards
+                self.magicCards = magicCards.filter{$0.imageUrl != nil }
             }
         }
     }
@@ -63,7 +64,7 @@ extension MagicViewController: UICollectionViewDelegateFlowLayout {
         guard let vc = storyBoard.instantiateViewController(withIdentifier: "MagicDetailVC") as? MagicDetailViewController else { return }
         vc.modalPresentationStyle = .overCurrentContext
         let details = magicCards[indexPath.row]
-     vc.detailmagic = [details]
+     vc.detailmagic = details
         present(vc, animated: true, completion: nil)
     }
 }

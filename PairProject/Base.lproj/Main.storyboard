@@ -257,12 +257,12 @@
                                 </connections>
                             </button>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIM-eO-yJV">
-                                <rect key="frame" x="56.5" y="143.5" width="262.5" height="400"/>
+                                <rect key="frame" x="56.5" y="175.5" width="262.5" height="336.5"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A3C-fe-Cfa">
-                                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="400"/>
-                                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J5R-Qz-vBI">
+                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A3C-fe-Cfa">
+                                        <rect key="frame" x="0.0" y="0.0" width="262.5" height="336.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J5R-Qz-vBI">
                                             <size key="itemSize" width="262.5" height="401"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -270,7 +270,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MagicDetailCell" id="FSG-dk-BMq" customClass="MagicDetailCollectionViewCell" customModule="PairProject" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="262.5" height="401"/>
+                                                <rect key="frame" x="0.0" y="-32.5" width="262.5" height="401"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="262.5" height="401"/>
@@ -342,7 +342,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kIM-eO-yJV" firstAttribute="height" secondItem="rJX-rF-bXE" secondAttribute="height" multiplier="0.6" id="2Oa-ag-kOk"/>
+                            <constraint firstItem="kIM-eO-yJV" firstAttribute="height" secondItem="rJX-rF-bXE" secondAttribute="height" multiplier="0.5" constant="3" id="2Oa-ag-kOk"/>
                             <constraint firstItem="HkY-YM-nkq" firstAttribute="leading" secondItem="mhH-aV-vsM" secondAttribute="leading" id="5EW-6P-AUR"/>
                             <constraint firstItem="mhH-aV-vsM" firstAttribute="bottom" secondItem="HkY-YM-nkq" secondAttribute="bottom" id="R3K-lA-Ecf"/>
                             <constraint firstItem="kIM-eO-yJV" firstAttribute="centerX" secondItem="mhH-aV-vsM" secondAttribute="centerX" id="dgF-Up-dMk"/>

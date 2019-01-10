@@ -35,6 +35,7 @@ final class magicAPIClient {
                     completionHandler(nil, foreignNames.foreignNames)
                 } catch {
                     completionHandler(appError, nil)
+                    completionHandler(AppError.decodingError(error), nil)
                 }
             }
         }

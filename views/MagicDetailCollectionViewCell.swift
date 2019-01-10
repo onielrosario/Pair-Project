@@ -25,9 +25,13 @@ class MagicDetailCollectionViewCell: UICollectionViewCell {
             }
         }
         magicDetailName.text = magicCard.name
-        let languages = magicCard.foreignNames
-       
-        
+        _ = magicCard.foreignNames
+    }
+    
+    func configureLanguage(foreign: ForeignName)
+    {
+        magicDetailLanguage.text = foreign.language
+        magicDetailDescription.text = foreign.text
     }
     
     

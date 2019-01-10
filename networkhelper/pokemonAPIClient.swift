@@ -26,4 +26,19 @@ final class APIClient {
         }
     }
     
+    static func getAttacks(completionHandler: @escaping (AppError?, [Attack]?) -> Void) {
+        NetworkHelper.shared.performDataTask(endpointURLString: "https://api.pokemontcg.io/v1/cards?contains=imageUrl,imageUrlHiRes,attacks") { (appError, data, httpResponse) in
+            if let appError = appError {
+                completionHandler(AppError.badURL(appError.errorMessage()), nil)
+            } else if let data = data {
+                do {
+                    let pokemon = try JSONDecoder().decode(PokemonCard.self, from: data)
+                    completionHandler(nil, pokemon.attacks)
+                } catch {
+                    completionHandler(AppError.decodingError(error), nil)
+                }
+            }
+        }
+    }
+    
 }

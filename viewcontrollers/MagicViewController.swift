@@ -57,4 +57,13 @@ extension MagicViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: 130, height: 200)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "MagicDetailVC") as? MagicDetailViewController else { return }
+        vc.modalPresentationStyle = .overCurrentContext
+        let details = magicCards[indexPath.row]
+     vc.detailmagic = [details]
+        present(vc, animated: true, completion: nil)
+    }
 }

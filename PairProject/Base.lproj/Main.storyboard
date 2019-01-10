@@ -204,7 +204,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="182"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Goq-g8-iON">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyCard" translatesAutoresizingMaskIntoConstraints="NO" id="Goq-g8-iON">
                                                     <rect key="frame" x="11" y="11" width="98" height="160"/>
                                                 </imageView>
                                             </subviews>
@@ -250,6 +250,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkY-YM-nkq">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <action selector="dismissButton:" destination="AFS-1U-I9H" eventType="touchUpInside" id="Md5-TN-qb7"/>
+                                </connections>
+                            </button>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIM-eO-yJV">
                                 <rect key="frame" x="56.5" y="143.5" width="262.5" height="400"/>
                                 <subviews>
@@ -337,12 +343,19 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kIM-eO-yJV" firstAttribute="height" secondItem="rJX-rF-bXE" secondAttribute="height" multiplier="0.6" id="2Oa-ag-kOk"/>
+                            <constraint firstItem="HkY-YM-nkq" firstAttribute="leading" secondItem="mhH-aV-vsM" secondAttribute="leading" id="5EW-6P-AUR"/>
+                            <constraint firstItem="mhH-aV-vsM" firstAttribute="bottom" secondItem="HkY-YM-nkq" secondAttribute="bottom" id="R3K-lA-Ecf"/>
                             <constraint firstItem="kIM-eO-yJV" firstAttribute="centerX" secondItem="mhH-aV-vsM" secondAttribute="centerX" id="dgF-Up-dMk"/>
                             <constraint firstItem="kIM-eO-yJV" firstAttribute="width" secondItem="rJX-rF-bXE" secondAttribute="width" multiplier="0.7" id="hEQ-yM-ID2"/>
+                            <constraint firstItem="HkY-YM-nkq" firstAttribute="top" secondItem="mhH-aV-vsM" secondAttribute="top" id="oSg-lB-Kc5"/>
+                            <constraint firstItem="mhH-aV-vsM" firstAttribute="trailing" secondItem="HkY-YM-nkq" secondAttribute="trailing" id="qnM-Sz-jIX"/>
                             <constraint firstItem="kIM-eO-yJV" firstAttribute="centerY" secondItem="mhH-aV-vsM" secondAttribute="centerY" id="wM6-c5-3Yg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mhH-aV-vsM"/>
                     </view>
+                    <connections>
+                        <outlet property="magicDetailCollection" destination="A3C-fe-Cfa" id="pbb-fo-UCS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJJ-Es-jhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -369,6 +382,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dummyCard" width="340" height="471"/>
         <image name="magic" width="38" height="38"/>
         <image name="pikachuLogo" width="30" height="30"/>
     </resources>

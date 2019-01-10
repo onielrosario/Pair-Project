@@ -23,7 +23,7 @@ class MagicCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        magicThumbnail.image = nil
+        magicThumbnail.image = UIImage.init(named: "dummyCard")
     }
     
 }

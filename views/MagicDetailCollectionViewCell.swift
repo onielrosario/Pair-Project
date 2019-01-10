@@ -16,4 +16,19 @@ class MagicDetailCollectionViewCell: UICollectionViewCell {
     
 
 
+    func configureDetailCell(magicCard: MagicCard ) {
+        ImageHelper.shared.fetchImage(urlString: magicCard.imageUrl ?? "") { (appError, magicImage) in
+            if let appError = appError {
+                print(appError.errorMessage())
+            } else if let magicImage = magicImage {
+                self.magicDetailImage.image = magicImage
+            }
+        }
+        magicDetailName.text = magicCard.name
+        let languages = magicCard.foreignNames
+       
+        
+    }
+    
+    
 }

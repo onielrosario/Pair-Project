@@ -14,5 +14,12 @@ class PokemonDetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var attackDescription: UITextView!
     
     
+    func setupSetup(pokemon: Attack) {
+        self.attackName.text = pokemon.name
+        self.attackLevel.text = pokemon.damage
+        self.attackDescription.text = pokemon.text
+    }
+    
+    
     
 }
